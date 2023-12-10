@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { useState } from "react";
 import { login } from "../actions/authUser";
-import { handleAddUser } from "../actions/users";
+import { handleAddUser } from "../actions/shared";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const SignIn = (props) => {
@@ -17,7 +17,8 @@ const SignIn = (props) => {
   });
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location === undefined ? null : location.state;
+  const { from } = location.state !== null ? location.state : "/";
+  const path = from === undefined ? "/" : from;
 
   const avatars = ["cat", "dog", "fox", "gorilla", "koala", "lion", "tiger"];
 
@@ -25,10 +26,11 @@ const SignIn = (props) => {
     e.preventDefault();
     setSelectedUser(e.target.value);
     props.dispatch(login(e.target.value));
-    navigate(from === null ? "/" : from);
+    go();
   };
 
   const handleNewUserChange = (e) => {
+    e.preventDefault();
     const { name, value, alt } = e.target;
     setNewUser({
       ...newUser,
@@ -38,6 +40,7 @@ const SignIn = (props) => {
 
   const onSubmitNewUser = (e) => {
     e.preventDefault();
+    go();
     props.dispatch(handleAddUser(newUser));
     setNewUser({
       name: "",
@@ -46,8 +49,11 @@ const SignIn = (props) => {
       avatarURL: "",
       department: "",
     });
-    navigate(from === null ? "/" : from);
   };
+
+  function go() {
+    navigate(path ?? "/");
+  }
 
   return (
     <div className="main-signin">

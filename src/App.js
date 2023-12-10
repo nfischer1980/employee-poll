@@ -26,20 +26,7 @@ const App = (props) => {
       <div className="container">
         <Nav />
         <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              props.isAuthenticated ? (
-                <Dashboard />
-              ) : (
-                <Navigate
-                  to="/signin"
-                  state={{ from: `${location.pathname}${location.search}` }}
-                />
-              )
-            }
-          />
+          <Route path="/" exact element={<Dashboard />} />
           <Route
             path="/add"
             exact
