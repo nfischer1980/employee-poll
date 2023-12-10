@@ -74,7 +74,7 @@ Path: `/leaderboard`
 | A user should be able to create a new user                                                                                                                                    | Sign Up | N      |
 | When a user, not logged in, try to navigate to a page, Then he should be redirected to the login page And after logging in Then he should be redirected to the requested page | Log In  | N      |
 
-![SignIn](wireframe/new_user.drawio.svg)
+![SignIn](wireframe/signin.drawio.svg)
 
 ### Not Found
 
