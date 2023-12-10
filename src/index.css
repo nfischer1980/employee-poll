@@ -1,0 +1,165 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: black;
+  background-color: beige;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+
+.nav li:first-child {
+  padding-left: 0;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 100%;
+  max-width: 590px;
+  padding: 10px;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.question {
+  width: 100%;
+  max-width: 590px;
+  padding: 10px;
+  display: flex;
+  margin: 0 auto;
+  border: 1px solid #dad7d7;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: bisque;
+}
+
+.question-info {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-signin {
+  border: 3px solid #fff;
+}
+
+.signin-logas {
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.signin-signup {
+  width: 40%;
+  float: right;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.nav-item {
+  float: left;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #c53030;
+}
+
+.active {
+  background-color: #04aa6d;
+}
+
+.select-animal span:hover:not(.active) {
+  background-color: goldenrod;
+}
+
+.chosen-option {
+  background-color: yellow;
+  width: 40%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.other-option {
+  background-color: grey;
+  width: 40%;
+  float: right;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.leaderboard {
+  border: 3px solid black;
+  text-align: center;
+}
+
+.leaderboard-authuser {
+  border: 3px solid red;
+}
+
+.leaderboard-user {
+  border: 3px solid black;
+  width: 100%;
+  max-width: 590px;
+}
+
+.user-name {
+  color: red;
+}
+
+.other-name {
+  color: black;
+}
+
+.leaderboard-array {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 250px;
+  padding: 20px;
+  display: flex;
+  margin: 0 auto;
+  border-radius: 3px;
+  cursor: pointer;
+}
