@@ -82,7 +82,7 @@ const App = (props) => {
             }
           />
           <Route path="/signin" exact element={<SignIn />} />
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="*" element={<NotFound reason="Invalid Route" />}></Route>
         </Routes>
       </div>
     </Fragment>

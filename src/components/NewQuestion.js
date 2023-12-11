@@ -34,8 +34,9 @@ const NewQuestion = (props) => {
       <form className="new-question" onSubmit={handleSubmit}>
         <h5>Would you rather?</h5>
         <div>
-          <label htmlFor="optionOne">Option One </label>
+          <label htmlFor="optionOne">Option One</label>
           <input
+            data-testid="optionOne-input"
             type="text"
             name="optionOne"
             id="optionOne"
@@ -45,8 +46,9 @@ const NewQuestion = (props) => {
           />
         </div>
         <div>
-          <label htmlFor="optionTwo">Option Two </label>
+          <label htmlFor="optionTwo">Option Two</label>
           <input
+            data-testid="optionTwo-input"
             type="text"
             name="optionTwo"
             id="optionTwo"
@@ -55,7 +57,7 @@ const NewQuestion = (props) => {
             required
           />
         </div>
-        <button className="btn" type="submit">
+        <button className="btn" type="submit" data-testid="submit-question">
           Submit
         </button>
       </form>

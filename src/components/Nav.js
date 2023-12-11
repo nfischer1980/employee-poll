@@ -74,7 +74,7 @@ const Nav = (props) => {
             {props.isAuthenticated && (
               <Avatar
                 alt={props.users[props.authUser]?.name}
-                src={`${props.users[props.authUser]?.avatarURL}.PNG`}
+                src={`../${props.users[props.authUser]?.avatarURL}.PNG`}
                 size="40"
               />
             )}

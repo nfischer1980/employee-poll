@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const NotFound = () => {
+const NotFound = ({ reason }) => {
   const navigate = useNavigate();
 
   const GoBack = () => {
@@ -9,7 +9,7 @@ const NotFound = () => {
 
   return (
     <div className="not-found">
-      <h1>This is not the page you are looking for</h1>
+      <h1>{reason}</h1>
       <button onClick={GoBack}>Click Me To Go Back</button>
     </div>
   );
