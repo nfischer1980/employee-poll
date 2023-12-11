@@ -7,7 +7,6 @@ import {
 import { receiveQuestions, answerQuestion, addQuestion } from "./questions";
 import { receiveUsers, addUserAnswer, addUserQuestion, addUser } from "./users";
 import { hideLoading, showLoading } from "react-redux-loading-bar";
-import { login } from "./authUser";
 
 export function handleInitialData() {
   return (dispatch) => {
