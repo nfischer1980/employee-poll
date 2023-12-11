@@ -31,7 +31,7 @@ const Dashboard = (props) => {
       </div>
       <div className="question-list">
         {props.questions
-          .sort((a, b) => a.timestamp - b.timestamp)
+          .sort((a, b) => b.timestamp - a.timestamp)
           .filter(
             (question) =>
               [

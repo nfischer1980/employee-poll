@@ -34,6 +34,15 @@ const QuestionPage = (props) => {
     setHasAnswer(!hasAnswer);
   };
 
+  const getPercentage = (number, optionOneCount, optionTwoCount) => { if(number===0)
+    {
+      return 0;
+    }
+    else {
+      return Math.round(number/(optionOneCount+optionTwoCount)*100, 2);
+    }
+  }
+
   const [hasAnswer, setHasAnswer] = useState(props.answered);
   if (!questionExists) {
     console.log("Displaying Not Found");
@@ -91,6 +100,7 @@ const QuestionPage = (props) => {
                   <p>
                     Number of Votes: {props.question.optionOne.votes.length}
                   </p>
+                  <p>Percentage: {getPercentage(props.question.optionOne.votes.length, props.question.optionOne.votes.length, props.question.optionTwo.votes.length)}%</p>
                   <ul>
                     {props.question.optionOne.votes.map((vote, index) => (
                       <li
@@ -115,6 +125,7 @@ const QuestionPage = (props) => {
                   <p>
                     Number of Votes: {props.question.optionTwo.votes.length}
                   </p>
+                  <p>Percentage: {getPercentage(props.question.optionTwo.votes.length, props.question.optionOne.votes.length, props.question.optionTwo.votes.length)}%</p>
                   <ul>
                     {props.question.optionTwo.votes.map((vote, index) => (
                       <li

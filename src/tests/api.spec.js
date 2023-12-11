@@ -1,4 +1,4 @@
-import { saveQuestion, saveQuestionAnswer, saveUser } from "../utils/api";
+import { _saveQuestion, _saveQuestionAnswer } from "../utils/_DATA";
 
 jest.useRealTimers();
 
@@ -11,7 +11,7 @@ describe("Save question function", () => {
       author: "saraedo",
     };
 
-    const formattedQuestion = await saveQuestion(mockQuestion);
+    const formattedQuestion = await _saveQuestion(mockQuestion);
 
     expect(formattedQuestion.id).not.toBeNull();
     expect(formattedQuestion.timestamp).not.toBeNull();
@@ -28,7 +28,7 @@ describe("Save question function", () => {
       author: "saraedo",
     };
 
-    await expect(saveQuestion(mockQuestion)).rejects.toEqual(
+    await expect(_saveQuestion(mockQuestion)).rejects.toEqual(
       "Please provide optionOneText, optionTwoText, and author"
     );
   });
@@ -43,7 +43,7 @@ describe("Save questionAnswer function", () => {
       answer: "optionOne",
     };
 
-    const saved = await saveQuestionAnswer(mockAnswer);
+    const saved = await _saveQuestionAnswer(mockAnswer);
 
     expect(saved).toBe(true);
   });
@@ -53,7 +53,7 @@ describe("Save questionAnswer function", () => {
       authedUser: "sarahedo",
     };
 
-    await expect(saveQuestionAnswer(mockAnswer)).rejects.toEqual(
+    await expect(_saveQuestionAnswer(mockAnswer)).rejects.toEqual(
       "Please provide authedUser, qid, and answer"
     );
   });
